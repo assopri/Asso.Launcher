@@ -16,5 +16,10 @@ namespace Asso.Launcher
         {
             InitializeComponent();
         }
+
+        private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+
+        }
     }
 }
