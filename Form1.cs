@@ -15,6 +15,9 @@ namespace Asso.Launcher
         public Form1()
         {
             InitializeComponent();
+
+            tileBar1.ItemSize = 180;
+            //tileBar1.WideTileWidth = 800;
         }
 
         private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
