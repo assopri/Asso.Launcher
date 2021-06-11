@@ -22,6 +22,11 @@ namespace Asso.Launcher
 
             labelControlAppTitle.Text += " v." + AppUtilities.GetCurrentAppVersion();
 
+            if(false)
+            {
+                lciRecentFiles.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+
             FillRecentOpenedFileGrid();
         }
 
@@ -105,5 +110,7 @@ namespace Asso.Launcher
             tileView1.TileTemplate.Add(tileViewItemElement4);
             tileView1.TileTemplate.Add(tileViewItemElement5);
         }
+
+      
     }
 }

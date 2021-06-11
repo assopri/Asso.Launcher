@@ -29,23 +29,30 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lcRecentFiles = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.labelControlAppTitle = new DevExpress.XtraEditors.LabelControl();
             this.gcToolOptions = new DevExpress.XtraGrid.GridControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciRecentFiles = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lcRecentFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcToolOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciRecentFiles)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lcRecentFiles);
             this.layoutControl1.Controls.Add(this.labelControlAppTitle);
             this.layoutControl1.Controls.Add(this.gcToolOptions);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -57,6 +64,23 @@
             this.layoutControl1.Size = new System.Drawing.Size(702, 409);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "lcMain";
+            // 
+            // lcRecentFiles
+            // 
+            this.lcRecentFiles.Location = new System.Drawing.Point(12, 58);
+            this.lcRecentFiles.Name = "lcRecentFiles";
+            this.lcRecentFiles.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(2111, 241, 650, 400);
+            this.lcRecentFiles.Root = this.layoutControlGroup1;
+            this.lcRecentFiles.Size = new System.Drawing.Size(337, 339);
+            this.lcRecentFiles.TabIndex = 6;
+            this.lcRecentFiles.Text = "layoutControl2";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(261, 339);
             // 
             // labelControlAppTitle
             // 
@@ -74,10 +98,10 @@
             // 
             // gcToolOptions
             // 
-            this.gcToolOptions.Location = new System.Drawing.Point(12, 58);
+            this.gcToolOptions.Location = new System.Drawing.Point(353, 58);
             this.gcToolOptions.MainView = this.tileView1;
             this.gcToolOptions.Name = "gcToolOptions";
-            this.gcToolOptions.Size = new System.Drawing.Size(678, 339);
+            this.gcToolOptions.Size = new System.Drawing.Size(337, 339);
             this.gcToolOptions.TabIndex = 4;
             this.gcToolOptions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -94,7 +118,8 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.lciRecentFiles});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(702, 409);
             this.Root.TextVisible = false;
@@ -102,9 +127,9 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gcToolOptions;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 46);
+            this.layoutControlItem1.Location = new System.Drawing.Point(341, 46);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(682, 343);
+            this.layoutControlItem1.Size = new System.Drawing.Size(341, 343);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -117,6 +142,15 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // lciRecentFiles
+            // 
+            this.lciRecentFiles.Control = this.lcRecentFiles;
+            this.lciRecentFiles.Location = new System.Drawing.Point(0, 46);
+            this.lciRecentFiles.Name = "lciRecentFiles";
+            this.lciRecentFiles.Size = new System.Drawing.Size(341, 343);
+            this.lciRecentFiles.TextSize = new System.Drawing.Size(0, 0);
+            this.lciRecentFiles.TextVisible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,11 +162,14 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lcRecentFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcToolOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciRecentFiles)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,6 +183,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.LabelControl labelControlAppTitle;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControl lcRecentFiles;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem lciRecentFiles;
     }
 }
 
