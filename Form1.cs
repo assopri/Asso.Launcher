@@ -22,7 +22,7 @@ namespace Asso.Launcher
 
             labelControlAppTitle.Text += " v." + AppUtilities.GetCurrentAppVersion();
 
-            if(false)
+            if(true)
             {
                 lciRecentFiles.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
@@ -32,7 +32,7 @@ namespace Asso.Launcher
 
         private void FillRecentOpenedFileGrid()
         {
-            gcToolOptions.DataSource = Asso.Launcher.Data.RecentlyOpenedItem.LoadData();
+            gcToolOptions.DataSource = Asso.Launcher.Data.AssoToolForLaunch.LoadData();
 
             tileView1.OptionsTiles.Orientation = Orientation.Vertical;
 

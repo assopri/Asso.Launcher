@@ -11,12 +11,11 @@ using System.Threading.Tasks;
 
 namespace Asso.Launcher.Data
 {
-    public class RecentlyOpenedItem : INotifyPropertyChanged
+    public class AssoToolForLaunch : INotifyPropertyChanged
     {
+        private readonly string _mmAppName = "DiagramDesigner.exe";
 
         private string mName;
-
-
 
         public string Name
 
@@ -24,7 +23,9 @@ namespace Asso.Launcher.Data
 
             get { return mName; }
 
-            set { mName = value;
+            set
+            {
+                mName = value;
                 OnPropertyChanged();
             }
 
@@ -42,46 +43,41 @@ namespace Asso.Launcher.Data
 
             get { return mFilePath; }
 
-            set { mFilePath = value;
+            set
+            {
+                mFilePath = value;
                 OnPropertyChanged();
             }
 
         }
 
+        private string mLaunchParams;
 
-
-        private DateTime _lastTimeOpened;
-
-
-
-        public DateTime LastTimeOpened
-
+        public string LaunchParams
         {
-
-            get { return _lastTimeOpened; }
-
-            set { _lastTimeOpened = value;
-                OnPropertyChanged();
-            }
-
+            get { return mLaunchParams; }
+            set { mLaunchParams = value; }
         }
 
-        private ProjectType mProjectType;
+
+        private string mDescription;
 
 
-        public ProjectType ProjectType
+
+        public string Description
 
         {
 
-            get { return mProjectType; }
+            get { return mDescription; }
 
             set
             {
-                mProjectType = value;
+                mDescription = value;
                 OnPropertyChanged();
             }
 
         }
+
         public Image Picture
         {
             get
@@ -106,56 +102,47 @@ namespace Asso.Launcher.Data
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private static BindingList<RecentlyOpenedItem> allObjects;
-        public static BindingList<RecentlyOpenedItem> GetData(int count)
+        private static BindingList<AssoToolForLaunch> allObjects;
+        public static BindingList<AssoToolForLaunch> GetData(int count)
         {
             if (allObjects == null)
                 LoadData();
-            BindingList<RecentlyOpenedItem> bindingList = new BindingList<RecentlyOpenedItem>();
+            BindingList<AssoToolForLaunch> bindingList = new BindingList<AssoToolForLaunch>();
             for (int index = 0; index < count; ++index)
                 bindingList.Add(allObjects[index % allObjects.Count]);
-            return (BindingList<RecentlyOpenedItem>)bindingList;
+            return (BindingList<AssoToolForLaunch>)bindingList;
         }
 
-        public static BindingList<RecentlyOpenedItem> LoadData()
+        public static BindingList<AssoToolForLaunch> LoadData()
         {
             if (allObjects == null)
-                allObjects = new BindingList<RecentlyOpenedItem>();
+                allObjects = new BindingList<AssoToolForLaunch>();
             else
                 return allObjects;
-            BindingList<RecentlyOpenedItem> bindingList = allObjects;
-            bindingList.Add(new RecentlyOpenedItem()
+            BindingList<AssoToolForLaunch> bindingList = allObjects;
+            bindingList.Add(new AssoToolForLaunch()
             {
-                Name = "testName",
-                FilePath = "1",
-                LastTimeOpened = DateTime.Now,
-                ProjectType = ProjectType.TypeA,
+                Name = "Create scheme From Scratch",
+                FilePath = @"\Tools\Mindmap\",
+                LaunchParams="",
+                Description= "Description DescriptionD escription Description Description Description Description",
                 Picture = ImageUtilities.GetRandomImage(50, 50)
             });
-            bindingList.Add(new RecentlyOpenedItem()
+            bindingList.Add(new AssoToolForLaunch()
             {
-                Name = "testName2",
+                Name = "Create scheme from MD note",
                 FilePath = "2",
-                LastTimeOpened = DateTime.Now,
-                ProjectType = ProjectType.TypeB,
+                LaunchParams = "",
+                Description = "Description DescriptionD escription Description Description Description Description",
                 Picture = ImageUtilities.GetRandomImage(50, 50)
             });
             return bindingList;
         }
 
+        
 
 
     }
 
 
-
-    public enum ProjectType
-
-    {
-
-        TypeA,
-
-        TypeB
-
-    }
 }

@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AppUtilities.cs" />
+    <Compile Include="Classes\ImageUtilities.cs" />
+    <Compile Include="Data\AssoToolForLaunch.cs" />
     <Compile Include="Data\RecentlyOpenedItem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
