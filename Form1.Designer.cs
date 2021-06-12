@@ -33,7 +33,7 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.labelControlAppTitle = new DevExpress.XtraEditors.LabelControl();
             this.gcToolOptions = new DevExpress.XtraGrid.GridControl();
-            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.tileViewAssoLaunchOptions = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -43,7 +43,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lcRecentFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcToolOptions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileViewAssoLaunchOptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -99,18 +99,19 @@
             // gcToolOptions
             // 
             this.gcToolOptions.Location = new System.Drawing.Point(353, 58);
-            this.gcToolOptions.MainView = this.tileView1;
+            this.gcToolOptions.MainView = this.tileViewAssoLaunchOptions;
             this.gcToolOptions.Name = "gcToolOptions";
             this.gcToolOptions.Size = new System.Drawing.Size(337, 339);
             this.gcToolOptions.TabIndex = 4;
             this.gcToolOptions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.tileView1});
+            this.tileViewAssoLaunchOptions});
             // 
-            // tileView1
+            // tileViewAssoLaunchOptions
             // 
-            this.tileView1.GridControl = this.gcToolOptions;
-            this.tileView1.Name = "tileView1";
-            this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileViewAssoLaunchOptions.GridControl = this.gcToolOptions;
+            this.tileViewAssoLaunchOptions.Name = "tileViewAssoLaunchOptions";
+            this.tileViewAssoLaunchOptions.OptionsTiles.ColumnCount = 1;
+            this.tileViewAssoLaunchOptions.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
             // 
             // Root
             // 
@@ -150,6 +151,7 @@
             this.lciRecentFiles.Size = new System.Drawing.Size(341, 343);
             this.lciRecentFiles.TextSize = new System.Drawing.Size(0, 0);
             this.lciRecentFiles.TextVisible = false;
+            this.lciRecentFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lciRecentFiles_MouseDown);
             // 
             // Form1
             // 
@@ -160,13 +162,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Asso Launcher";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lcRecentFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcToolOptions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileViewAssoLaunchOptions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -180,7 +182,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraGrid.GridControl gcToolOptions;
-        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
+        private DevExpress.XtraGrid.Views.Tile.TileView tileViewAssoLaunchOptions;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.LabelControl labelControlAppTitle;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
