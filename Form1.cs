@@ -62,8 +62,7 @@ namespace Asso.Launcher
             tileViewAssoLaunchOptions.TileRows.Add(tableRowDefinition1);
             tileViewAssoLaunchOptions.TileRows.Add(tableRowDefinition2);
 
-            //tileViewItemElement1.Column = tileView1.Columns["ID"];
-            tileViewItemElement1.Image = SystemIcons.Question.ToBitmap();//tileView1.Columns["Picture"];
+            tileViewItemElement1.Column = tileViewAssoLaunchOptions.Columns["Picture"];
             tileViewItemElement1.ImageOptions.ImageAlignment = TileItemContentAlignment.MiddleCenter;
             tileViewItemElement1.ImageOptions.ImageScaleMode = TileItemImageScaleMode.Squeeze;
             //tileViewItemElement1.Text = "colID";
