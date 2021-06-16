@@ -32,8 +32,24 @@ namespace Asso.Launcher
             }
 
             FillRecentOpenedFileGrid();
+
+            //https://supportcenter.devexpress.com/ticket/details/t1006182/barmanager-how-to-drag-a-form-by-clicking-a-bar
+            this.MouseDown += DragForm_MouseDown;
+            //emptySpaceItem2.MouseDown += DragForm_MouseDown;
+            layoutControlItem1.MouseDown += DragForm_MouseDown;
+            labelControlAppTitle.MouseDown += DragForm_MouseDown;
+            gcToolOptions.MouseDown += DragForm_MouseDown;
+
+            layoutControl1.ShowCustomization += LayoutControl1_ShowHideCustomization;
+            layoutControl1.HideCustomization += LayoutControl1_ShowHideCustomization;
+
         }
 
+        bool allowDragForm = true;
+        private void LayoutControl1_ShowHideCustomization(object sender, EventArgs e)
+        {
+            allowDragForm = !allowDragForm;
+        }
         private void FillRecentOpenedFileGrid()
         {
             gcToolOptions.DataSource = Asso.Launcher.Data.AssoToolForLaunch.LoadData();
@@ -142,6 +158,26 @@ namespace Asso.Launcher
 
             //ReleaseCapture();
             //SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        private void DragForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left || !allowDragForm) return;
+
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            else if(e.KeyCode == Keys.F4 && e.Alt)
+            {
+                this.Close();
+            }
         }
     }
 }
